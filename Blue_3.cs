@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -80,14 +80,14 @@ namespace Lab_8
 
         public override string ToString()
         {
-            if (_output == null || _output.Length==0) return "";
+            if (_output == null || _output.Length == 0) return "";
 
-            string result = "";
+            var str = new StringBuilder();
             foreach (var x in _output)
             {
-                result += $"{x.Item1} - {x.Item2:F4}\n";
+                str.AppendLine($"{x.Item1} - {x.Item2:F4}");
             }
-            return string.Join(Environment.NewLine,result);
+            return str.ToString();
         }
     }
 }
