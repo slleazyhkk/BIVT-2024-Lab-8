@@ -83,9 +83,14 @@ namespace Lab_8
             if (_output == null || _output.Length == 0) return "";
 
             var str = new StringBuilder();
-            foreach (var x in _output)
+            for (int i = 0; i < _output.Length; i++)
             {
-                str.AppendLine($"{x.Item1} - {x.Item2:F4}");
+                var x = _output[i];
+                str.Append($"{x.Item1} - {x.Item2:F4}");
+                if (i < _output.Length - 1)
+                {
+                    str.AppendLine();
+                }
             }
             return str.ToString();
         }
